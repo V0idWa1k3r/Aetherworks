@@ -1,0 +1,17 @@
+{
+	"forge_marker" : 1,
+	"defaults" : {
+		"model" : "aetherworks:prism",
+		"textures" : {
+			"lens" : "aetherworks:blocks/prism",
+			"casing" : "embers:blocks/dawnstone_plate",
+			"caminite" : "embers:blocks/tank_wall",
+			"metal" : "embers:blocks/dawnstone_plate",
+			"particle" : "#metal"
+		}
+	},
+	"variants" : {
+		"normal": [{}],
+		"inventory": [{}]
+	}
+}

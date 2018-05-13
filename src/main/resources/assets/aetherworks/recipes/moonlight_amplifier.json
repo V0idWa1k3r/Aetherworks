@@ -1,0 +1,26 @@
+{
+    "result": {
+        "item": "aetherworks:moonlight_amplifier",
+        "data": 0
+    },
+    "pattern": [
+        "DLD",
+        "DGL",
+        "BBB"
+    ],
+    "type": "forge:ore_shaped",
+    "key" : {
+        "D" : {
+            "item" : "#INGOTDAWNSTONE"
+        },
+        "L" : {
+            "item" : "#LENSAETHER"
+        },
+        "G" : {
+            "item" : "#PANEGLASS"
+        },
+        "B" : {
+            "item" : "embers:archaic_brick"
+        }
+    }
+}

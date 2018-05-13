@@ -1,0 +1,17 @@
+{
+    "result": {
+        "item": "aetherworks:prism_support",
+        "data": 0
+    },
+    "pattern": [
+        "| |",
+        "| |",
+        "| |"
+    ],
+    "type": "forge:ore_shaped",
+    "key" : {
+        "|" : {
+            "item": "embers:wall_caminite_brick"
+        }
+    }
+}

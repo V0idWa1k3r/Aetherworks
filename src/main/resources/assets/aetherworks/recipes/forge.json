@@ -1,0 +1,26 @@
+{
+    "result": {
+        "item": "aetherworks:forge_component",
+        "data": 0
+    },
+    "pattern": [
+        "CEC",
+        "CHC",
+        "DDD"
+    ],
+    "type": "forge:ore_shaped",
+    "key": {
+        "D" : {
+            "item": "#PLATEDAWNSTONE"
+        },
+        "C" : {
+            "item": "embers:brick_caminite"
+        },
+        "E" : {
+            "item" : "embers:crystal_ember"
+        },
+        "H" : {
+            "item" : "embers:ember_cluster"
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "result": {
+        "item": "aetherworks:item_resource",
+        "data": 2
+    },
+    "pattern": [
+        " I ",
+        "IAI",
+        " I "
+    ],
+    "type": "forge:ore_shaped",
+    "key" : {
+        "I" : {
+            "item": "#INGOTBRONZE"
+        },
+        "A" : {
+            "item": "#SHARDAETHER"
+        }
+    }
+}

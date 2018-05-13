@@ -1,0 +1,17 @@
+{
+    "result": {
+        "item": "aetherworks:item_shovel_redstone",
+        "data": 0
+    },
+    "type": "forge:ore_shapeless",
+    "ingredients": [
+        {
+            "item": "aetherworks:item_resource",
+            "data": 19
+        },
+        {
+            "item": "aetherworks:item_resource",
+            "data": 8
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "result": {
+        "item": "aetherworks:aether_prism_controller_matrix",
+        "data": 0
+    },
+    "pattern": [
+        "DCD",
+        "DAD",
+        "BBB"
+    ],
+    "type": "forge:ore_shaped",
+    "key": {
+        "D" : {
+            "item": "#INGOTDAWNSTONE"
+        },
+        "C" : {
+            "item": "aetherworks:item_resource",
+            "data": 1
+        },
+        "A" : {
+            "item" : "embers:intelligent_apparatus"
+        },
+        "B" : {
+            "item" : "embers:archaic_brick"
+        }
+    }
+}

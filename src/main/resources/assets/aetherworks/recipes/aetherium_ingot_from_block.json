@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "aetherworks:block_aether"
+        }
+    },
+    "result": {
+        "item": "aetherworks:item_resource",
+        "count": 9,
+        "data": 4
+    }
+}

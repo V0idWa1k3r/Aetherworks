@@ -1,0 +1,22 @@
+{
+    "result": {
+        "item": "aetherworks:forge_component",
+        "data": 4
+    },
+    "pattern": [
+        "BAB",
+        "PPP"
+    ],
+    "type": "forge:ore_shaped",
+    "key": {
+        "B" : {
+            "item": "embers:brick_caminite"
+        },
+        "A" : {
+            "item": "embers:dust_ash"
+        },
+        "P" : {
+            "item": "embers:plate_caminite"
+        }
+    }
+}

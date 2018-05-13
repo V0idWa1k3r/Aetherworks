@@ -1,0 +1,29 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "aetherworks:aether_prism_control_matrix_base",
+		"textures": {
+			"base": "embers:blocks/archaic_flat",
+			"apparatus_base": "embers:blocks/archaic_flat",
+			"apparatus_handle": "embers:blocks/copper_column_top",
+			"arm": "embers:blocks/block_dawnstone",
+			"crystal": "aetherworks:blocks/model_crystal",
+			"particle" : "#base"
+		},
+		"transform": {
+			"gui": {
+				"scale": 0.75,
+				"rotation": [0, 1, 0, 0.5],
+				"translation" : [0, -0.15, 0]
+			}
+		}
+	},
+	"variants": {
+		"normal": {
+			"submodel": "aetherworks:aether_prism_control_matrix"
+		},
+		"inventory": {
+			"submodel": "aetherworks:aether_prism_control_matrix"
+		}
+	}
+}

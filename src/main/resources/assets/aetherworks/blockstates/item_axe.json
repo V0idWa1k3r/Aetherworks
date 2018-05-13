@@ -1,0 +1,26 @@
+{
+	"forge_marker" : 1,
+	"defaults" : {
+		"model" : "aetherworks:handheld",
+        "gui3d" : true,
+		"textures" : {
+			"layer0" : "aetherworks:items/axe_prismarine"
+		}
+	},
+	"variants" : {
+		"normal" : [{}],
+		"inventory" : [{}],		
+		"type" : {
+            "prismarine" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/axe_prismarine"
+                }
+            },
+            "ender" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/axe_ender"
+                }
+            }
+		}
+	}
+}

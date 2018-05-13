@@ -1,0 +1,26 @@
+{
+	"forge_marker" : 1,
+	"defaults" : {
+		"model" : "aetherworks:handheld",
+        "gui3d" : true,
+		"textures" : {
+			"layer0" : "aetherworks:items/pickaxe_aether"
+		}
+	},
+	"variants" : {
+		"normal" : [{}],
+		"inventory" : [{}],		
+		"type" : {
+            "aether" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/pickaxe_aether"
+                }
+            },
+            "ember" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/pickaxe_ember"
+                }
+            }
+		}
+	}
+}

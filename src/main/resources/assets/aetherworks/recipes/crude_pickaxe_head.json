@@ -1,0 +1,18 @@
+{
+    "result": {
+        "item": "aetherworks:item_resource",
+        "data": 9
+    },
+    "pattern": [
+        "IGI"
+    ],
+    "type": "forge:ore_shaped",
+    "key": {
+        "I" : {
+            "item": "#INGOTAETHER"
+        },
+        "G" : {
+            "item": "#GEMAETHER"
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "result": {
+        "item": "aetherworks:forge_component",
+        "data": 5
+    },
+    "pattern": [
+        "PPP",
+        "III"
+    ],
+    "type": "forge:ore_shaped",
+    "key": {
+        "P" : {
+            "item": "#PLATEAETHER"
+        },
+        "I" : {
+            "item": "#INGOTAETHER"
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+	"forge_marker" : 1,
+	"defaults" : {
+		"model" : "cube_all",
+		"textures" : {
+			"all" : "aetherworks:blocks/block_aether",
+			"particle" : "#all"
+		}
+	},
+	"variants" : {
+		"normal": [{}],
+		"inventory": [{}]
+	}
+}

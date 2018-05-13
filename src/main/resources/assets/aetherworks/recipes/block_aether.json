@@ -1,0 +1,17 @@
+{
+    "result": {
+        "item": "aetherworks:block_aether",
+        "data": 0
+    },
+    "pattern": [
+        "AAA",
+        "AAA",
+        "AAA"
+    ],
+    "type": "forge:ore_shaped",
+    "key" : {
+        "A" : {
+            "item": "#INGOTAETHER"
+        }
+    }
+}

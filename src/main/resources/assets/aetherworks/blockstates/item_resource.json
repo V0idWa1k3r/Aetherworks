@@ -1,0 +1,121 @@
+{
+	"forge_marker" : 1,
+	"defaults" : {
+		"model" : "aetherworks:item_generated",
+		"transform": "forge:default-item",
+		"textures" : {
+			"layer0" : "aetherworks:items/aether_shard"
+		}
+	},
+	"variants" : {
+		"normal" : [{}],
+		"inventory" : [{}],		
+		"type" : {
+			"aether_shard" : {
+				"textures" : {
+					"layer0" : "aetherworks:items/aether_shard"
+				}
+			},
+			"focus_crystal" : {
+				"textures" : {
+					"layer0" : "aetherworks:items/focus_crystal"
+				}
+			},
+			"aetherium_lens" : {
+				"textures" : {
+					"layer0" : "aetherworks:items/aetherium_lens"
+				}
+			},
+			"plate_aether" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/plate_aether"
+                }
+            },
+            "ingot_aether" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/ingot_aether"
+                }
+            },
+            "gem_aether" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/gem_aether"
+                }
+            },
+            "crude_tool_rod" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/crude_tool_rod"
+                }
+            },
+            "tool_rod" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/tool_rod"
+                }
+            },
+            "infused_tool_rod" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/tool_rod"
+                }
+            },
+            "crude_pickaxe_head" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/crude_pickaxe_head"
+                }
+            },
+            "pickaxe_head" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/pickaxe_head"
+                }
+            },
+            "pickaxe_head_aether" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/pickaxe_head_aether"
+                }
+            },
+            "pickaxe_head_ember" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/pickaxe_head_ember"
+                }
+            },
+            "crude_axe_head" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/crude_axe_head"
+                }
+            },
+            "axe_head" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/axe_head"
+                }
+            },
+            "axe_head_prismarine" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/axe_head_prismarine"
+                }
+            },
+            "axe_head_ender" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/axe_head_ender"
+                }
+            },
+            "crude_shovel_head" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/crude_shovel_head"
+                }
+            },
+            "shovel_head" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/shovel_head"
+                }
+            },
+            "shovel_head_redstone" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/shovel_head_redstone"
+                }
+            },
+            "shovel_head_slime" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/shovel_head_slime"
+                }
+            }
+		}
+	}
+}

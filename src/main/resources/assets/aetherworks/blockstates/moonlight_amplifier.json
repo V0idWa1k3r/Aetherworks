@@ -1,0 +1,36 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "aetherworks:aether_prism_control_matrix_base",
+		"textures": {
+			"base": "embers:blocks/archaic_flat",
+			"lens_casing" : "embers:blocks/block_bronze",
+			"lens" : "aetherworks:blocks/lens",
+			"glass" : "aetherworks:blocks/mirror",
+			"screw" : "embers:blocks/dawnstone_plate",
+			"metal" : "#screw",
+			"particle" : "#base"
+		}
+	},
+	"variants": {
+		"normal": [{}],
+		"inventory": [{}],
+		"facing" : {
+			"north" : {
+				"submodel" : "aetherworks:moonlight_amplifier"
+			},
+			"south" : {
+				"submodel" : "aetherworks:moonlight_amplifier",
+				"y" : 180
+			},
+			"east" : {
+				"submodel" : "aetherworks:moonlight_amplifier",
+				"y" : 90
+			},
+			"west" : {
+				"submodel" : "aetherworks:moonlight_amplifier",
+				"y" : 270
+			}
+		}
+	}
+}

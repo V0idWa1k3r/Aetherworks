@@ -1,0 +1,87 @@
+{
+	"forge_marker" : 1,
+	"defaults" : {
+		"model" : "cube",
+		"textures" : {
+			"all" : "embers:blocks/block_dawnstone",
+			"down" : "#all",
+			"up" : "#all",
+			"north" : "#all",
+			"south" : "#all",
+			"west" : "#all",
+			"east" : "#all",
+			"particle" : "#all"
+		}
+	},
+	"variants" : {
+		"normal": [{}],
+		"inventory": [{}],
+		"offset" : {
+			"right_front" : {
+				"textures" : {
+					"up" : "aetherworks:blocks/aetherium_forge_corner_tr",
+					"down" : "aetherworks:blocks/aetherium_forge_corner_br",
+					"north" : "aetherworks:blocks/aetherium_forge_corner_side",
+					"east" : "aetherworks:blocks/aetherium_forge_corner_side_inv"
+				}
+			},
+			"right" : {
+				"textures" : {
+                    "up" : "aetherworks:blocks/aetherium_forge_tb_side_inv",
+                    "down" : "aetherworks:blocks/aetherium_forge_tb_side_inv",
+                    "east" : "aetherworks:blocks/aetherium_forge_side"
+				}
+			},
+            "right_back" : {
+                "textures" : {
+                    "up" : "aetherworks:blocks/aetherium_forge_corner_br",
+                    "down" : "aetherworks:blocks/aetherium_forge_corner_tr",
+                    "south" : "aetherworks:blocks/aetherium_forge_corner_side_inv",
+                    "east" : "aetherworks:blocks/aetherium_forge_corner_side"
+                }
+            },
+            "left_front" : {
+                "textures" : {
+                    "up" : "aetherworks:blocks/aetherium_forge_corner_tl",
+                    "down" : "aetherworks:blocks/aetherium_forge_corner_bl",
+                    "north" : "aetherworks:blocks/aetherium_forge_corner_side_inv",
+                    "west" : "aetherworks:blocks/aetherium_forge_corner_side"
+                }
+            },
+            "left" : {
+                "textures" : {
+                    "up" : "aetherworks:blocks/aetherium_forge_tb_side",
+                    "down" : "aetherworks:blocks/aetherium_forge_tb_side",
+                    "west" : "aetherworks:blocks/aetherium_forge_side"
+                }
+            },
+            "left_back" : {
+                "textures" : {
+                    "up" : "aetherworks:blocks/aetherium_forge_corner_bl",
+                    "down" : "aetherworks:blocks/aetherium_forge_corner_tl",
+                    "south" : "aetherworks:blocks/aetherium_forge_corner_side",
+                    "west" : "aetherworks:blocks/aetherium_forge_corner_side_inv"
+                }
+            },
+            "front" : {
+                "textures": {
+                    "up": "aetherworks:blocks/aetherium_forge_lr_side_t",
+                    "down": "aetherworks:blocks/aetherium_forge_lr_side_b",
+                    "north": "aetherworks:blocks/aetherium_forge_side"
+                }
+            },
+            "back" : {
+                "textures": {
+                    "up": "aetherworks:blocks/aetherium_forge_lr_side_b",
+                    "down": "aetherworks:blocks/aetherium_forge_lr_side_t",
+                    "south": "aetherworks:blocks/aetherium_forge_side"
+                }
+            },
+            "none" : {
+                "textures" : {
+                    "all" : "aetherworks:blocks/aetherium_forge_center"
+                }
+            }
+		}
+	}
+}

@@ -1,0 +1,46 @@
+{
+	"forge_marker" : 1,
+	"defaults" : {
+		"model" : "aetherworks:item_generated",
+		"transform": "forge:default-item",
+		"textures" : {
+			"layer0" : "aetherworks:items/geode_basic"
+		}
+	},
+	"variants" : {
+		"normal" : [{}],
+		"inventory" : [{}],		
+		"type" : {
+			"basic" : {
+				"textures" : {
+					"layer0" : "aetherworks:items/geode_basic"
+				}
+			},
+            "cold" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/geode_cold"
+                }
+            },
+            "end" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/geode_end"
+                }
+            },
+            "hot" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/geode_hot"
+                }
+            },
+            "nether" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/geode_nether"
+                }
+            },
+            "ocean" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/geode_ocean"
+                }
+            }
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{
+    "result": {
+        "item": "aetherworks:item_resource",
+        "data": 6
+    },
+    "pattern": [
+        "  I",
+        " I ",
+        "I  "
+    ],
+    "type": "forge:ore_shaped",
+    "key": {
+        "I" : {
+            "item": "#INGOTAETHER"
+        }
+    }
+}

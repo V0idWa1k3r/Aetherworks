@@ -1,0 +1,17 @@
+{
+    "result": {
+        "item": "aetherworks:item_pickaxe_aether",
+        "data": 0
+    },
+    "type": "forge:ore_shapeless",
+    "ingredients": [
+        {
+            "item": "aetherworks:item_resource",
+            "data": 11
+        },
+        {
+            "item": "aetherworks:item_resource",
+            "data": 8
+        }
+    ]
+}

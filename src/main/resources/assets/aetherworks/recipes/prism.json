@@ -1,0 +1,23 @@
+{
+    "result": {
+        "item": "aetherworks:prism",
+        "data": 0
+    },
+    "pattern": [
+        "DLD",
+        "LCL",
+        "DLD"
+    ],
+    "type": "forge:ore_shaped",
+    "key": {
+        "D" : {
+            "item": "#INGOTDAWNSTONE"
+        },
+        "C" : {
+            "item": "embers:archaic_circuit"
+        },
+        "L" : {
+            "item" : "#LENSAETHER"
+        }
+    }
+}

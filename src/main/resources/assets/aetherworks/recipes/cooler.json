@@ -1,0 +1,29 @@
+{
+    "result": {
+        "item": "aetherworks:forge_component",
+        "data": 2
+    },
+    "pattern": [
+        " E ",
+        "HTH",
+        "DCD"
+    ],
+    "type": "forge:ore_shaped",
+    "key": {
+        "D" : {
+            "item": "#PLATEDAWNSTONE"
+        },
+        "T" : {
+            "item": "embers:block_tank"
+        },
+        "C" : {
+            "item": "#PLATECOPPER"
+        },
+        "E" : {
+            "item" : "embers:crystal_ember"
+        },
+        "H" : {
+            "item" : "#PLATENICKEL"
+        }
+    }
+}

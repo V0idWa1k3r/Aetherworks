@@ -1,0 +1,16 @@
+[
+{
+  "modid": "aetherworks",
+  "name": "AetherWorks",
+  "description": "An addon to Embers by Elucent that introduces Aether shards - a rare and valuable material you can process with Embers to create truly powerful tools",
+  "version": "1.11.2-0.0.1.0-beta1",
+  "mcversion": "1.11.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["V0idWa1k3r"],
+  "credits": "MinecraftForge team for Forge API, Elucent for Embers, Azanor for Baubles. This mod is an addon to Embers by Elucent and uses some of textures from Embers to blend in with the original mod. All credits for such textures go to Elucent",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

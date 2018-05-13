@@ -1,0 +1,107 @@
+[
+    {
+        "ingredient": {
+            "type": "forge:ore_dict",
+            "ore": "ingotDawnstone"
+        },
+        "name": "INGOTDAWNSTONE"
+    },
+    {
+        "ingredient": {
+            "type": "forge:ore_dict",
+            "ore": "ingotBronze"
+        },
+        "name": "INGOTBRONZE"
+    },
+    {
+        "ingredient": {
+            "type": "forge:ore_dict",
+            "ore": "shardAether"
+        },
+        "name": "SHARDAETHER"
+    },
+    {
+        "ingredient": {
+            "type": "forge:ore_dict",
+            "ore": "lensAether"
+        },
+        "name": "LENSAETHER"
+    },
+    {
+        "ingredient": {
+            "type" : "forge:ore_dict",
+            "ore": "paneGlass"
+        },
+        "name": "PANEGLASS"
+    },
+    {
+        "ingredient": {
+            "type" : "forge:ore_dict",
+            "ore": "ingotAether"
+        },
+        "name": "INGOTAETHER"
+    },
+    {
+        "ingredient": {
+            "type" : "forge:ore_dict",
+            "ore": "plateDawnstone"
+        },
+        "name": "PLATEDAWNSTONE"
+    },
+    {
+        "ingredient": {
+            "type" : "forge:ore_dict",
+            "ore": "plateCopper"
+        },
+        "name": "PLATECOPPER"
+    },
+    {
+        "ingredient": {
+            "type" : "forge:ore_dict",
+            "ore": "plateNickel"
+        },
+        "name": "PLATENICKEL"
+    },
+    {
+        "ingredient": {
+            "type" : "forge:ore_dict",
+            "ore": "plateIron"
+        },
+        "name": "PLATEIRON"
+    },
+    {
+        "ingredient": {
+            "type" : "forge:ore_dict",
+            "ore": "plateAether"
+        },
+        "name": "PLATEAETHER"
+    },
+    {
+        "ingredient": {
+            "type" : "forge:ore_dict",
+            "ore": "ingotAether"
+        },
+        "name": "INGOTAETHER"
+    },
+    {
+        "ingredient": {
+            "type" : "forge:ore_dict",
+            "ore": "paper"
+        },
+        "name": "PAPER"
+    },
+    {
+        "ingredient": {
+            "type" : "forge:ore_dict",
+            "ore": "ingotLead"
+        },
+        "name": "INGOTLEAD"
+    },
+    {
+        "ingredient": {
+            "type" : "forge:ore_dict",
+            "ore": "gemAether"
+        },
+        "name": "GEMAETHER"
+    }
+]

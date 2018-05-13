@@ -1,0 +1,23 @@
+{
+    "result": {
+        "item": "aetherworks:forge_component",
+        "data": 3
+    },
+    "pattern": [
+        "CIC",
+        "IBI",
+        "CIC"
+    ],
+    "type": "forge:ore_shaped",
+    "key": {
+        "C" : {
+            "item": "#PLATECOPPER"
+        },
+        "I" : {
+            "item": "#PLATEIRON"
+        },
+        "B" : {
+            "item": "minecraft:iron_bars"
+        }
+    }
+}

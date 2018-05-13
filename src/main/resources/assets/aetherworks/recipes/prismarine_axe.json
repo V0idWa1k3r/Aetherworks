@@ -1,0 +1,17 @@
+{
+    "result": {
+        "item": "aetherworks:item_axe_prismarine",
+        "data": 0
+    },
+    "type": "forge:ore_shapeless",
+    "ingredients": [
+        {
+            "item": "aetherworks:item_resource",
+            "data": 15
+        },
+        {
+            "item": "aetherworks:item_resource",
+            "data": 8
+        }
+    ]
+}

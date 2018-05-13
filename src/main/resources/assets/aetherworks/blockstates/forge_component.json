@@ -1,0 +1,72 @@
+{
+	"forge_marker" : 1,
+	"defaults" : {
+		"model" : "aetherworks:forge",
+        "gui3d" : true,
+        "transform": "forge:default-block",
+        "textures" : {
+            "particle" : "embers:blocks/block_dawnstone"
+        }
+	},
+	"variants" : {
+		"normal": [{}],
+		"inventory": [{}],
+		"facing" : {
+			"down" : {
+                "dummy" : "dummy"
+            },
+            "up" : {
+                "dummy" : "dummy"
+            },
+			"south" : {
+				"y" : 0
+			},
+			"north" : {
+				"y" : 180
+			},
+			"west" : {
+				"y" : 90
+			},
+			"east" : {
+				"y" : 270
+			}
+		},
+		"type" : {
+			"forge" : {
+				"model" : "aetherworks:forge"
+			},
+			"heater" : {
+                "model" : "aetherworks:heater",
+                "textures" : {
+                    "particle" : "embers:blocks/block_dawnstone"
+                }
+            },
+            "cooler" : {
+                "model" : "aetherworks:heater",
+                "textures" : {
+                    "0" : "aetherworks:blocks/cooler",
+                    "particle" : "embers:blocks/block_dawnstone"
+                }
+            },
+            "heat_vent" : {
+                "model" : "aetherworks:heat_vent",
+                "textures" : {
+                    "particle" : "embers:blocks/block_copper"
+                }
+            },
+            "metal_former" : {
+                "model" : "aetherworks:metal_former",
+                "textures" : {
+                    "particle" : "embers:blocks/block_caminite_brick"
+                }
+            },
+            "anvil" : {
+                "model" : "aetherworks:metal_former",
+                "textures" : {
+                    "0" : "aetherworks:blocks/block_aether",
+                    "particle" : "aetherworks:blocks/block_aether"
+                }
+            }
+		}
+	}
+}

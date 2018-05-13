@@ -1,0 +1,23 @@
+{
+    "result": {
+        "item": "aetherworks:heat_dial",
+        "data": 0
+    },
+    "pattern": [
+        "C",
+        "P",
+        "L"
+    ],
+    "type": "forge:ore_shaped",
+    "key" : {
+        "C" : {
+            "item": "minecraft:compass"
+        },
+        "P" : {
+            "item": "#PAPER"
+        },
+        "L" : {
+            "item": "#INGOTLEAD"
+        }
+    }
+}
