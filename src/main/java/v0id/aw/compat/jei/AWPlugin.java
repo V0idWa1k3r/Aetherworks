@@ -2,6 +2,7 @@ package v0id.aw.compat.jei;
 
 import mezz.jei.api.*;
 import mezz.jei.api.ingredients.IModIngredientRegistration;
+import mezz.jei.api.recipe.IRecipeCategoryRegistration;
 import net.minecraft.item.ItemStack;
 import v0id.aw.common.block.AWBlocks;
 import v0id.aw.common.recipe.AARecipes;
@@ -34,15 +35,20 @@ public class AWPlugin implements IModPlugin
     }
 
     @Override
+    public void registerCategories(IRecipeCategoryRegistration registry)
+    {
+        registry.addRecipeCategories(
+                new Categories.MetalFormerCategory(registry.getJeiHelpers().getGuiHelper()),
+                new Categories.AnvilCategory(registry.getJeiHelpers().getGuiHelper()));
+    }
+
+    @Override
     public void register(IModRegistry iModRegistry)
     {
-        IGuiHelper helper = iModRegistry.getJeiHelpers().getGuiHelper();
-        iModRegistry.addRecipeCategories(new Categories.MetalFormerCategory(helper));
         iModRegistry.addRecipes(MetalFormerRecipes.recipes.stream().map(Wrappers.MetalFormerWrapper::new).collect(Collectors.toList()), AWConsts.catIDMetalFormer);
-        iModRegistry.addRecipeCategoryCraftingItem(new ItemStack(AWBlocks.FORGE_COMPONENT, 1, 4), AWConsts.catIDMetalFormer);
-        iModRegistry.addRecipeCategories(new Categories.AnvilCategory(helper));
+        iModRegistry.addRecipeCatalyst(new ItemStack(AWBlocks.FORGE_COMPONENT, 1, 4), AWConsts.catIDMetalFormer);
         iModRegistry.addRecipes(AARecipes.recipes.stream().map(Wrappers.AnvilWrapper::new).collect(Collectors.toList()), AWConsts.catIDAnvil);
-        iModRegistry.addRecipeCategoryCraftingItem(new ItemStack(AWBlocks.FORGE_COMPONENT, 1, 5), AWConsts.catIDAnvil);
+        iModRegistry.addRecipeCatalyst(new ItemStack(AWBlocks.FORGE_COMPONENT, 1, 5), AWConsts.catIDAnvil);
     }
 
     @Override
