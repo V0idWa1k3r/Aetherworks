@@ -19,6 +19,12 @@ public class AWCfg
     {
         @Config.Comment("Aether Ore generation settings")
         public final GenSettings oreAether = new GenSettings(4, 80, 128, 4,-1, 1);
+
+        @Config.Comment("Whether ore retrogen is enabled or not.")
+        public boolean enableRetrogen = false;
+
+        @Config.Comment("The key for the retrogen. Changing this will make chunks retrogenerate the ore even if it was already generated.")
+        public String retrogenKey = "gen";
     }
 
     public static class GenSettings

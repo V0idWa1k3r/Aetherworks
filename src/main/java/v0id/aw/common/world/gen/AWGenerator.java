@@ -20,6 +20,13 @@ import java.util.Random;
  */
 public class AWGenerator implements IWorldGenerator, ILifecycleListener
 {
+    public static AWGenerator INSTANCE = null;
+
+    public AWGenerator()
+    {
+        INSTANCE = this;
+    }
+
     @Override
     public void preInit(FMLPreInitializationEvent evt)
     {
