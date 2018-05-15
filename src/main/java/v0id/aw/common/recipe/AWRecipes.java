@@ -3,9 +3,13 @@ package v0id.aw.common.recipe;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.oredict.OreDictionary;
 import teamroots.embers.RegistryManager;
 import teamroots.embers.item.EnumStampType;
@@ -21,8 +25,35 @@ import java.util.stream.Stream;
 /**
  * Created by V0idWa1k3r on 31-May-17.
  */
+@Mod.EventBusSubscriber
 public class AWRecipes implements ILifecycleListener
 {
+    @SubscribeEvent
+    public static void onRegisterRecipes(RegistryEvent.Register<IRecipe> event)
+    {
+        RecipeRegistry.stampingRecipes.add(new ItemStampingRecipe(new ItemStack(RegistryManager.shard_ember), new FluidStack(FluidRegistry.WATER, 1000), EnumStampType.TYPE_FLAT, new ItemStack(AWItems.RESOURCE, 1, 1), false, false));
+        RecipeRegistry.mixingRecipes.add(new FluidMixingRecipe(new FluidStack[]{ new FluidStack(AWFluids.FLUID_IMPURE_AETHERIUM_GAS, 8), new FluidStack(RegistryManager.fluid_molten_electrum, 8) }, new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 16)));
+        RecipeRegistry.stampingRecipes.add(new ItemStampingRecipe(ItemStack.EMPTY, new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 16), EnumStampType.TYPE_FLAT, new ItemStack(AWItems.RESOURCE, 1, 0), false, false));
+        RecipeRegistry.meltingOreRecipes.add(new ItemMeltingOreRecipe("shardAether", new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 16)));
+        RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(12, 16, 12, 16, 12, 16, 12, 16, 12, 16, new ItemStack(AWItems.RESOURCE, 1, 7), ItemStack.EMPTY, ItemStack.EMPTY, ItemStack.EMPTY, ItemStack.EMPTY, new ItemStack(AWItems.RESOURCE, 1, 8)));
+        RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(30, 34, 48, 64, 0, 0, 48, 64, 0, 0, new ItemStack(AWItems.RESOURCE, 1, 10), new ItemStack(AWItems.RESOURCE, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 11)));
+        RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(30, 34, 0, 0, 48, 64, 0, 0, 48, 64, new ItemStack(AWItems.RESOURCE, 1, 10), new ItemStack(RegistryManager.crystal_ember, 1, 0), new ItemStack(RegistryManager.crystal_ember, 1, 0), new ItemStack(RegistryManager.crystal_ember, 1, 0), new ItemStack(RegistryManager.crystal_ember, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 12)));
+        RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(0, 0, 48, 64, 48, 64, 30, 34, 0, 0, new ItemStack(AWItems.RESOURCE, 1, 14), new ItemStack(Items.PRISMARINE_CRYSTALS, 1, 0), new ItemStack(Items.PRISMARINE_SHARD, 1, 0), new ItemStack(Items.PRISMARINE_CRYSTALS, 1, 0), new ItemStack(Items.PRISMARINE_SHARD, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 15)));
+        RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(48, 64, 0, 0, 0, 0, 30, 34, 48, 64, new ItemStack(AWItems.RESOURCE, 1, 14), new ItemStack(Items.ENDER_PEARL, 1, 0), new ItemStack(Items.ENDER_EYE, 1, 0), new ItemStack(Items.ENDER_PEARL, 1, 0), new ItemStack(Items.ENDER_EYE, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 16)));
+        RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(48, 64, 0, 0, 48, 64, 0, 0, 30, 34, new ItemStack(AWItems.RESOURCE, 1, 18), new ItemStack(Items.REDSTONE, 1, 0), new ItemStack(Blocks.PISTON, 1, 0), new ItemStack(Blocks.REDSTONE_TORCH, 1, 0), new ItemStack(Items.REPEATER, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 19)));
+        RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(0, 0, 48, 64, 0, 0, 32, 64, 30, 34, new ItemStack(AWItems.RESOURCE, 1, 18), new ItemStack(Items.SLIME_BALL, 1, 0), new ItemStack(Blocks.STICKY_PISTON, 1, 0), new ItemStack(Items.COMPARATOR, 1, 0), new ItemStack(Blocks.HOPPER, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 20)));
+        MetalFormerRecipes.addRecipe(new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 144), new ItemStack(RegistryManager.ingot_bronze, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 4), 2100);
+        MetalFormerRecipes.addRecipe(new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 144), new ItemStack(RegistryManager.plate_bronze, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 3), 2100);
+        MetalFormerRecipes.addRecipe(new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 576), new ItemStack(Items.DIAMOND, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 5), 2200);
+        MetalFormerRecipes.addRecipe(new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 576), new ItemStack(Items.EMERALD, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 5), 2600);
+        AARecipes.addRecipe(new ItemStack(AWItems.RESOURCE, 1, 6), new ItemStack(AWItems.RESOURCE, 1, 7), 1, 50, 15, 2100, 3000, 30);
+        AARecipes.addRecipe(new ItemStack(AWItems.RESOURCE, 1, 9), new ItemStack(AWItems.RESOURCE, 1, 10), 4, 60, 30, 2400, 2900, 50);
+        AARecipes.addRecipe(new ItemStack(AWItems.RESOURCE, 1, 13), new ItemStack(AWItems.RESOURCE, 1, 14), 4, 55, 35, 2350, 2800, 40);
+        AARecipes.addRecipe(new ItemStack(AWItems.RESOURCE, 1, 17), new ItemStack(AWItems.RESOURCE, 1, 18), 4, 70, 25, 2500, 2900, 55);
+        Stream.of(Geode.Type.values()).forEach(t -> AARecipes.addRecipe(new AARecipes.GeodeRecipe(new ItemStack(AWItems.GEODE, 1, t.ordinal()), ItemStack.EMPTY, 1, 10, 5, 800, 3000, 30)));
+        registerGeodes();
+    }
+
     @Override
     public void init(FMLInitializationEvent evt)
     {
@@ -37,28 +68,6 @@ public class AWRecipes implements ILifecycleListener
         OreDictionary.registerOre("plateAether", new ItemStack(AWItems.RESOURCE, 1, 3));
         OreDictionary.registerOre("ingotAether", new ItemStack(AWItems.RESOURCE, 1, 4));
         OreDictionary.registerOre("gemAether", new ItemStack(AWItems.RESOURCE, 1, 5));
-        RecipeRegistry.stampingRecipes.add(new ItemStampingRecipe(new ItemStack(RegistryManager.shard_ember), new FluidStack(FluidRegistry.WATER, 1000), EnumStampType.TYPE_FLAT, new ItemStack(AWItems.RESOURCE, 1, 1), false, false));
-        RecipeRegistry.mixingRecipes.add(new FluidMixingRecipe(new FluidStack[]{ new FluidStack(AWFluids.FLUID_IMPURE_AETHERIUM_GAS, 8), new FluidStack(RegistryManager.fluid_molten_electrum, 8) }, new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 16)));
-        RecipeRegistry.stampingRecipes.add(new ItemStampingRecipe(ItemStack.EMPTY, new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 16), EnumStampType.TYPE_FLAT, new ItemStack(AWItems.RESOURCE, 1, 0), false, false));
-        RecipeRegistry.meltingOreRecipes.add(new ItemMeltingOreRecipe("shardAether", new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 16)));
-        RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(12, 16, 12, 16, 12, 16, 12, 16, 12, 16, new ItemStack(AWItems.RESOURCE, 1, 7), ItemStack.EMPTY, ItemStack.EMPTY, ItemStack.EMPTY, ItemStack.EMPTY, new ItemStack(AWItems.RESOURCE, 1, 8)));
-        RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(30, 34, 48, 64, 0, 0, 48, 64, 0, 0, new ItemStack(AWItems.RESOURCE, 1, 10), new ItemStack(AWItems.RESOURCE, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 11)));
-        RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(30, 34, 0, 0, 48, 64, 0, 0, 48, 64, new ItemStack(AWItems.RESOURCE, 1, 10), new ItemStack(RegistryManager.crystal_ember, 1, 0), new ItemStack(RegistryManager.crystal_ember, 1, 0), new ItemStack(RegistryManager.crystal_ember, 1, 0), new ItemStack(RegistryManager.crystal_ember, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 12)));
-        RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(0, 0, 48, 64, 48, 64, 30, 34, 0, 0, new ItemStack(AWItems.RESOURCE, 1, 14), new ItemStack(Items.PRISMARINE_CRYSTALS, 1, 0), new ItemStack(Items.PRISMARINE_SHARD, 1, 0), new ItemStack(Items.PRISMARINE_CRYSTALS, 1, 0), new ItemStack(Items.PRISMARINE_SHARD, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 15)));
-        RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(48, 64, 0, 0, 0, 0, 30, 34, 48, 64, new ItemStack(AWItems.RESOURCE, 1, 14), new ItemStack(Items.ENDER_PEARL, 1, 0), new ItemStack(Items.ENDER_EYE, 1, 0), new ItemStack(Items.ENDER_PEARL, 1, 0), new ItemStack(Items.ENDER_EYE, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 16)));
-        RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(48, 64, 0, 0, 48, 64, 0, 0, 30, 34, new ItemStack(AWItems.RESOURCE, 1, 18), new ItemStack(Items.REDSTONE, 1, 0), new ItemStack(Blocks.PISTON, 1, 0), new ItemStack(Blocks.REDSTONE_TORCH, 1, 0), new ItemStack(Items.REPEATER, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 19)));
-        RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(0, 0, 48, 64, 0, 0, 32, 64, 30, 34, new ItemStack(AWItems.RESOURCE, 1, 18), new ItemStack(Items.SLIME_BALL, 1, 0), new ItemStack(Blocks.STICKY_PISTON, 1, 0), new ItemStack(Items.COMPARATOR, 1, 0), new ItemStack(Blocks.HOPPER, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 20)));
-
-        MetalFormerRecipes.addRecipe(new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 144), new ItemStack(RegistryManager.ingot_bronze, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 4), 2100);
-        MetalFormerRecipes.addRecipe(new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 144), new ItemStack(RegistryManager.plate_bronze, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 3), 2100);
-        MetalFormerRecipes.addRecipe(new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 576), new ItemStack(Items.DIAMOND, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 5), 2200);
-        MetalFormerRecipes.addRecipe(new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 576), new ItemStack(Items.EMERALD, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 5), 2600);
-        AARecipes.addRecipe(new ItemStack(AWItems.RESOURCE, 1, 6), new ItemStack(AWItems.RESOURCE, 1, 7), 1, 50, 15, 2100, 3000, 30);
-        AARecipes.addRecipe(new ItemStack(AWItems.RESOURCE, 1, 9), new ItemStack(AWItems.RESOURCE, 1, 10), 4, 60, 30, 2400, 2900, 50);
-        AARecipes.addRecipe(new ItemStack(AWItems.RESOURCE, 1, 13), new ItemStack(AWItems.RESOURCE, 1, 14), 4, 55, 35, 2350, 2800, 40);
-        AARecipes.addRecipe(new ItemStack(AWItems.RESOURCE, 1, 17), new ItemStack(AWItems.RESOURCE, 1, 18), 4, 70, 25, 2500, 2900, 55);
-        Stream.of(Geode.Type.values()).forEach(t -> AARecipes.addRecipe(new AARecipes.GeodeRecipe(new ItemStack(AWItems.GEODE, 1, t.ordinal()), ItemStack.EMPTY, 1, 10, 5, 800, 3000, 30)));
-        registerGeodes();
     }
 
     private static void registerGeodes()

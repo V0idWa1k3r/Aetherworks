@@ -10,7 +10,7 @@ import net.minecraftforge.common.util.EnumHelper;
 public class AWConsts
 {
     public static final String modid = "aetherworks";
-    public static final String deps = "required-after:embers";
+    public static final String deps = "required-after:embers;before:crafttweaker";
 
     public static final String clientProxy = "v0id.aw.client.AWClient";
     public static final String serverProxy = "v0id.aw.server.AWServer";
