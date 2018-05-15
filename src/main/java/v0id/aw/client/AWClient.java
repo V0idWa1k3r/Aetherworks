@@ -17,7 +17,6 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistryEntry;
@@ -45,7 +44,6 @@ import java.util.stream.Stream;
 /**
  * Created by V0idWa1k3r on 31-May-17.
  */
-@Mod.EventBusSubscriber(modid = AWConsts.modid)
 public class AWClient implements IAWProxy
 {
     public static final Map<ResourceLocation, TextureAtlasSprite> cachedModSprites = Maps.newHashMap();
@@ -61,7 +59,7 @@ public class AWClient implements IAWProxy
     public static final ResourceLocation LOCATION_FORGE_OVERLAY = new ResourceLocation(AWConsts.modid, "blocks/forge_overlay");
 
     @SubscribeEvent
-    public static void onModelRegistry(ModelRegistryEvent event)
+    public void onModelRegistry(ModelRegistryEvent event)
     {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(AWBlocks.AETHER_ORE), 0, mkModelPtr(AWBlocks.AETHER_ORE, "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(AWBlocks.AETHER_PRISM_CONTROLLER_MATRIX), 0, mkModelPtr(AWBlocks.AETHER_PRISM_CONTROLLER_MATRIX, "inventory"));
@@ -107,6 +105,7 @@ public class AWClient implements IAWProxy
     @Override
     public void preInit(FMLPreInitializationEvent evt)
     {
+        MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(new ClientHandler());
         ClientRegistry.bindTileEntitySpecialRenderer(TilePrism.class, new RenderPrism());
         ClientRegistry.bindTileEntitySpecialRenderer(TileForge.class, new RenderForge());
