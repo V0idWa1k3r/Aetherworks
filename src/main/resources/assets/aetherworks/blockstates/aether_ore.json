@@ -3,7 +3,7 @@
 	"defaults" : {
 		"model" : "aetherworks:aether_ore",
 		"textures" : {
-			"all" : "aetherworks:blocks/aether_gas",
+			"all" : "aetherworks:blocks/aether_ore",
 			"overlay" : "aetherworks:blocks/aether_ore_overlay"
 		}
 	},
