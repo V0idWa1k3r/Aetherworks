@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.oredict.OreDictionary;
+import teamroots.embers.ConfigManager;
 import teamroots.embers.RegistryManager;
 import teamroots.embers.item.EnumStampType;
 import teamroots.embers.recipe.*;
@@ -42,8 +43,17 @@ public class AWRecipes implements ILifecycleListener
         RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(48, 64, 0, 0, 0, 0, 30, 34, 48, 64, new ItemStack(AWItems.RESOURCE, 1, 14), new ItemStack(Items.ENDER_PEARL, 1, 0), new ItemStack(Items.ENDER_EYE, 1, 0), new ItemStack(Items.ENDER_PEARL, 1, 0), new ItemStack(Items.ENDER_EYE, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 16)));
         RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(48, 64, 0, 0, 48, 64, 0, 0, 30, 34, new ItemStack(AWItems.RESOURCE, 1, 18), new ItemStack(Items.REDSTONE, 1, 0), new ItemStack(Blocks.PISTON, 1, 0), new ItemStack(Blocks.REDSTONE_TORCH, 1, 0), new ItemStack(Items.REPEATER, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 19)));
         RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(0, 0, 48, 64, 0, 0, 32, 64, 30, 34, new ItemStack(AWItems.RESOURCE, 1, 18), new ItemStack(Items.SLIME_BALL, 1, 0), new ItemStack(Blocks.STICKY_PISTON, 1, 0), new ItemStack(Items.COMPARATOR, 1, 0), new ItemStack(Blocks.HOPPER, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 20)));
-        MetalFormerRecipes.addRecipe(new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 144), new ItemStack(RegistryManager.ingot_bronze, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 4), 2100);
-        MetalFormerRecipes.addRecipe(new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 144), new ItemStack(RegistryManager.plate_bronze, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 3), 2100);
+        if (ConfigManager.enableBronze)
+        {
+            MetalFormerRecipes.addRecipe(new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 144), new ItemStack(RegistryManager.ingot_bronze, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 4), 2100);
+            MetalFormerRecipes.addRecipe(new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 144), new ItemStack(RegistryManager.plate_bronze, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 3), 2100);
+        }
+        else
+        {
+            MetalFormerRecipes.addRecipe(new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 144), new ItemStack(RegistryManager.ingot_dawnstone, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 4), 2100);
+            MetalFormerRecipes.addRecipe(new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 144), new ItemStack(RegistryManager.plate_dawnstone, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 3), 2100);
+        }
+
         MetalFormerRecipes.addRecipe(new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 576), new ItemStack(Items.DIAMOND, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 5), 2200);
         MetalFormerRecipes.addRecipe(new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 576), new ItemStack(Items.EMERALD, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 5), 2600);
         AARecipes.addRecipe(new ItemStack(AWItems.RESOURCE, 1, 6), new ItemStack(AWItems.RESOURCE, 1, 7), 1, 50, 15, 2100, 3000, 30);
