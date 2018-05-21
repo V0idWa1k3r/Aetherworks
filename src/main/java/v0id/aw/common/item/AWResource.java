@@ -43,7 +43,9 @@ public class AWResource extends Item
         CRUDE_SHOVEL_HEAD,
         SHOVEL_HEAD,
         SHOVEL_HEAD_REDSTONE(true),
-        SHOVEL_HEAD_SLIME(true);
+        SHOVEL_HEAD_SLIME(true),
+        AETHER_CROWN_CRUDE,
+        AETHER_CROWN_MUNDANE;
 
         ResourceType()
         {

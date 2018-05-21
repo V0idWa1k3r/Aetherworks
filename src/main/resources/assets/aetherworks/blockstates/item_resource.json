@@ -115,6 +115,16 @@
                 "textures" : {
                     "layer0" : "aetherworks:items/shovel_head_slime"
                 }
+            },
+            "aether_crown_crude" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/crude_aether_crown"
+                }
+            },
+            "aether_crown_mundane" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/aether_crown_mundane"
+                }
             }
 		}
 	}

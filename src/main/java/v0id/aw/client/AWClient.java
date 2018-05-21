@@ -10,6 +10,7 @@ import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.potion.PotionType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
@@ -17,11 +18,13 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 import teamroots.embers.particle.ParticleUtil;
 import v0id.aw.client.handler.ClientHandler;
+import v0id.aw.client.handler.ColorPotionGem;
 import v0id.aw.client.render.tile.RenderAnvil;
 import v0id.aw.client.render.tile.RenderForge;
 import v0id.aw.client.render.tile.RenderMetalFormer;
@@ -40,6 +43,7 @@ import v0id.aw.lib.IAWProxy;
 
 import java.util.Map;
 import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 /**
  * Created by V0idWa1k3r on 31-May-17.
@@ -100,6 +104,9 @@ public class AWClient implements IAWProxy
         ModelBakery.registerItemVariants(AWItems.SHOVEL_REDSTONE, mkModelPtr(AWConsts.itemShovel, "type=redstone"));
         ModelLoader.setCustomMeshDefinition(AWItems.SHOVEL_SLIME, stack -> mkModelPtr(AWConsts.itemShovel, "type=slime"));
         ModelBakery.registerItemVariants(AWItems.SHOVEL_SLIME, mkModelPtr(AWConsts.itemShovel, "type=slime"));
+        ModelLoader.setCustomModelResourceLocation(AWItems.POTION_GEM, 0, mkModelPtr(AWItems.POTION_GEM, "inventory"));
+        ModelLoader.setCustomModelResourceLocation(AWItems.CROWN, 0, mkModelPtr(AWItems.CROWN, "inventory"));
+        StreamSupport.stream(PotionType.REGISTRY.spliterator(), false).forEach(pt -> ModelLoader.setCustomModelResourceLocation(AWItems.POTION_GEM, PotionType.REGISTRY.getIDForObject(pt) + 1, mkModelPtr(AWItems.POTION_GEM, "inventory")));
     }
 
     @Override
@@ -111,6 +118,12 @@ public class AWClient implements IAWProxy
         ClientRegistry.bindTileEntitySpecialRenderer(TileForge.class, new RenderForge());
         ClientRegistry.bindTileEntitySpecialRenderer(TileMetalFormer.class, new RenderMetalFormer());
         ClientRegistry.bindTileEntitySpecialRenderer(TileAnvil.class, new RenderAnvil());
+    }
+
+    @Override
+    public void postInit(FMLPostInitializationEvent evt)
+    {
+        Minecraft.getMinecraft().getItemColors().registerItemColorHandler(new ColorPotionGem(), AWItems.POTION_GEM);
     }
 
     private static final Map<String, ModelResourceLocation> modelPrtCache = Maps.newHashMap();

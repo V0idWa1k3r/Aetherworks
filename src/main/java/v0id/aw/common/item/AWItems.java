@@ -41,6 +41,12 @@ public class AWItems implements ILifecycleListener
     @GameRegistry.ObjectHolder(value = AWConsts.itemShovelSlimeID)
     public static final Item SHOVEL_SLIME = null;
 
+    @GameRegistry.ObjectHolder(value = AWConsts.itemPotionGemID)
+    public static final Item POTION_GEM = null;
+
+    @GameRegistry.ObjectHolder(value = AWConsts.itemCrownID)
+    public static final Item CROWN = null;
+
     @Override
     public void preInit(FMLPreInitializationEvent evt)
     {
@@ -58,7 +64,9 @@ public class AWItems implements ILifecycleListener
                 new AWAxe(AWAxe.Type.PRISMARINE),
                 new AWAxe(AWAxe.Type.ENDER),
                 new AWShovel(AWShovel.Type.REDSTONE),
-                new AWShovel(AWShovel.Type.SLIME)
+                new AWShovel(AWShovel.Type.SLIME),
+                new PotionGem(),
+                new AWCrown()
         };
 
         event.getRegistry().registerAll(toRegister);

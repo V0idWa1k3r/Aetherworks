@@ -64,6 +64,15 @@ public class AWConsts
     public static final ResourceLocation itemShovelSlime = new ResourceLocation(modid, itemShovelSlimeID);
     private static final String itemShovelID = "item_shovel";
     public static final ResourceLocation itemShovel = new ResourceLocation(modid, itemShovelID);
+    public static final String itemPotionGemID = "item_potion_gem";
+    public static final ResourceLocation itemPotionGem = new ResourceLocation(modid, itemPotionGemID);
+    public static final String itemCrownID = "item_crown";
+    public static final ResourceLocation itemCrown = new ResourceLocation(modid, itemCrownID);
+
+    public static final String recipePotionGemID = "recipe_potion_gem";
+    public static final ResourceLocation recipePotionGem = new ResourceLocation(modid, itemPotionGemID);
+    public static final String recipeCrownID = "recipe_crown";
+    public static final ResourceLocation recipeCrown = new ResourceLocation(modid, recipeCrownID);
 
     public static final ResourceLocation metalFormerUI = new ResourceLocation(modid, "textures/compat/jei/ui_metal_former.png");
     public static final String catIDMetalFormer = "aetherworks.metal_former";

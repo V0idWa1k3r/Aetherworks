@@ -1,0 +1,20 @@
+{
+    "result": {
+        "item": "aetherworks:item_potion_gem",
+        "data": 0
+    },
+    "pattern": [
+        " I ",
+        " A ",
+        " I "
+    ],
+    "type": "forge:ore_shaped",
+    "key" : {
+        "I" : {
+            "item": "#INGOTAETHER"
+        },
+        "A" : {
+            "item": "#GEMAETHER"
+        }
+    }
+}
