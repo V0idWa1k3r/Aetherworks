@@ -19,7 +19,7 @@ public class RecipeCrown extends IForgeRegistryEntry.Impl<IRecipe> implements IR
 {
     public RecipeCrown()
     {
-        this.setRegistryName(AWConsts.recipePotionGem);
+        this.setRegistryName(AWConsts.recipeCrown);
     }
 
     @Override
