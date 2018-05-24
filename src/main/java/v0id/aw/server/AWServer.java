@@ -1,7 +1,9 @@
 package v0id.aw.server;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.IThreadListener;
 import net.minecraft.world.World;
+import net.minecraftforge.common.DimensionManager;
 import v0id.aw.lib.IAWProxy;
 
 /**
@@ -13,6 +15,18 @@ public class AWServer implements IAWProxy
     public EntityPlayer getClientPlayer()
     {
         return null;
+    }
+
+    @Override
+    public World getContextWorld(int dim)
+    {
+        return DimensionManager.getWorld(dim);
+    }
+
+    @Override
+    public IThreadListener getContextListener(int dim)
+    {
+        return DimensionManager.getWorld(dim).getMinecraftServer();
     }
 
     @Override

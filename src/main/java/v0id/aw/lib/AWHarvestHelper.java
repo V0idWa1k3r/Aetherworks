@@ -20,6 +20,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
+import v0id.aw.net.AWNetworkHarvestNode;
 
 import java.util.*;
 import java.util.function.Predicate;
@@ -407,13 +409,15 @@ public class AWHarvestHelper
                             return;
                         }
 
-                        this.harvestedIn.playEvent(this.harvester, 2001, pos, Block.getStateId(state));
+                        SoundType type = state.getBlock().getSoundType(state, this.harvestedIn, pos, this.harvester);
+                        this.harvestedIn.playSound(null, pos, type.getBreakSound(), SoundCategory.BLOCKS, type.getVolume(), type.getPitch());
                         boolean flag = state.getBlock().canHarvestBlock(this.harvestedIn, pos, this.harvester);
                         boolean flag1 = this.removeBlock(pos, flag);
                         if (flag1 && flag)
                         {
                             state.getBlock().harvestBlock(this.harvestedIn, this.harvester, pos, state, this.harvestedIn.getTileEntity(pos), this.harvester.getHeldItemMainhand());
                             this.harvester.getHeldItemMainhand().damageItem(1, this.harvester);
+                            AWNetworkHarvestNode.sendNodeToClient(new NetworkRegistry.TargetPoint(this.harvestedIn.provider.getDimension(), pos.getX(), pos.getY(), pos.getZ(), 16), state, pos);
                         }
                     }
                 }

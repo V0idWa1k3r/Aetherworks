@@ -1,6 +1,7 @@
 package v0id.aw.lib;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.IThreadListener;
 import net.minecraft.world.World;
 
 /**
@@ -9,6 +10,10 @@ import net.minecraft.world.World;
 public interface IAWProxy extends ILifecycleListener
 {
     EntityPlayer getClientPlayer();
+
+    World getContextWorld(int dim);
+
+    IThreadListener getContextListener(int dim);
 
     String translate(String key, Object... values);
 

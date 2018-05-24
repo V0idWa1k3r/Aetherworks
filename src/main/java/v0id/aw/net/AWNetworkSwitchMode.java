@@ -28,6 +28,7 @@ public class AWNetworkSwitchMode implements IMessageHandler<AWPacketSwitchMode, 
     {
         wrapper = NetworkRegistry.INSTANCE.newSimpleChannel("aetherworks");
         wrapper.registerMessage(this, AWPacketSwitchMode.class, 0, Side.SERVER);
+        wrapper.registerMessage( new AWNetworkHarvestNode(), AWPacketHarvestNode.class, 1, Side.CLIENT);
     }
 
     public static void sendRequestToServer(EntityPlayer requester, AWShovel.Mode requested)

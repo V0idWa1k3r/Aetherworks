@@ -12,6 +12,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.potion.PotionType;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.IThreadListener;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -184,6 +185,18 @@ public class AWClient implements IAWProxy
     public EntityPlayer getClientPlayer()
     {
         return Minecraft.getMinecraft().player;
+    }
+
+    @Override
+    public World getContextWorld(int dim)
+    {
+        return Minecraft.getMinecraft().world;
+    }
+
+    @Override
+    public IThreadListener getContextListener(int dim)
+    {
+        return Minecraft.getMinecraft();
     }
 
     @Override
