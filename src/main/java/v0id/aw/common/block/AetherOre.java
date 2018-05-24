@@ -7,6 +7,7 @@ import net.minecraft.client.particle.ParticleManager;
 import net.minecraft.item.Item;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import v0id.aw.AetherWorks;
@@ -31,6 +32,13 @@ public class AetherOre extends Block
         this.setLightLevel(1F);
         this.setUnlocalizedName("aw.aether_ore");
         this.setHarvestLevel("pickaxe", 3);
+    }
+
+    @Override
+    public int getExpDrop(IBlockState state, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune)
+    {
+        Random rand = world instanceof World ? ((World)world).rand : new Random();
+        return MathHelper.getInt(rand, 4, 8);
     }
 
     @Override
