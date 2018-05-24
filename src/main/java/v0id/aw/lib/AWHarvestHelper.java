@@ -338,6 +338,8 @@ public class AWHarvestHelper
         public final Predicate<EntityPlayer> canHarvest;
         public final int range;
         public final Stack<BlockPos> toHarvest = new Stack<>();
+        private IBlockState baseState;
+        private final EnumFacing[] faces = Arrays.copyOf(EnumFacing.values(), EnumFacing.values().length);
 
         public boolean isInvalid()
         {
@@ -363,33 +365,54 @@ public class AWHarvestHelper
                 return;
             }
 
-            this.toHarvest.add(this.beginning);
-            IBlockState baseState = this.harvestedIn.getBlockState(this.beginning);
-            for (int dx = -range; dx <= range; dx++)
+            if (!isLoaded(this.beginning))
             {
-                for (int dy = -range; dy <= range; dy++)
-                {
-                    for (int dz = -range; dz <= range; dz++)
-                    {
-                        BlockPos at = this.beginning.add(dx, dy, dz);
-                        if (!this.isLoaded(at))
-                        {
-                            continue;
-                        }
+                this.invalid = true;
+                return;
+            }
 
-                        IBlockState stateAt = this.harvestedIn.getBlockState(at);
-                        if (stateAt.equals(baseState))
-                        {
-                            this.toHarvest.add(at);
-                        }
-                    }
-                }
+            this.toHarvest.add(this.beginning);
+            this.baseState = this.harvestedIn.getBlockState(this.beginning);
+            this.traverseRecursive(this.beginning);
+            this.toHarvest.sort((BlockPos l, BlockPos r) -> (int) (this.harvester.getDistanceSq(r) - this.harvester.getDistanceSq(l)));
+            if (this.toHarvest.isEmpty())
+            {
+                this.invalid = true;
             }
 
             this.toHarvest.sort((BlockPos l, BlockPos r) -> (int) (this.harvester.getDistanceSq(r) - this.harvester.getDistanceSq(l)));
             if (this.toHarvest.isEmpty())
             {
                 this.invalid = true;
+            }
+        }
+
+        private void traverseRecursive(BlockPos from)
+        {
+            if (from.getDistance(this.beginning.getX(), this.beginning.getY(), this.beginning.getZ()) >= this.range)
+            {
+                return;
+            }
+
+            for (EnumFacing facing : faces)
+            {
+                BlockPos offset = from.offset(facing);
+                if (this.toHarvest.contains(offset))
+                {
+                    continue;
+                }
+
+                if (!this.isLoaded(offset))
+                {
+                    continue;
+                }
+
+                IBlockState state = this.harvestedIn.getBlockState(offset);
+                if (state.equals(this.baseState))
+                {
+                    this.toHarvest.add(0, offset);
+                    this.traverseRecursive(offset);
+                }
             }
         }
 
