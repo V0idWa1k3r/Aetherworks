@@ -14,7 +14,7 @@ public class TileHeatVent extends TileEntity implements IForgePart
     @Override
     public void onForgeTick(IForge forge)
     {
-        if (this.world.getBlockState(this.getPos()).getBlock() instanceof Component && forge.getHeatCapability().getHeatStored() > 100)
+        if (this.world.getBlockState(this.getPos()).getBlock() instanceof Component && forge.getHeatCapability().getHeatStored() > 100 && !world.isBlockPowered(this.getPos()) && world.isBlockIndirectlyGettingPowered(this.getPos()) <= 0)
         {
             if (this.world.isRemote)
             {
