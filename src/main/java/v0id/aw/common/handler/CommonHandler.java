@@ -50,6 +50,11 @@ public class CommonHandler
 
     private static List<Pair<Integer, ChunkPos>> retrogenList = Lists.newArrayList();
 
+    public static List<Pair<Integer, ChunkPos>> getRetrogenList()
+    {
+        return retrogenList;
+    }
+
     @SubscribeEvent
     public void onChunkLoad(ChunkDataEvent.Load event)
     {

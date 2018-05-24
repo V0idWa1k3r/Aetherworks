@@ -1,6 +1,7 @@
 package v0id.aw.common.world.gen;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
@@ -9,10 +10,13 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.tuple.Pair;
 import v0id.aw.common.block.AWBlocks;
 import v0id.aw.common.config.AWCfg;
+import v0id.aw.common.handler.CommonHandler;
 import v0id.aw.lib.ILifecycleListener;
 
+import java.util.Iterator;
 import java.util.Random;
 
 /**
@@ -45,6 +49,17 @@ public class AWGenerator implements IWorldGenerator, ILifecycleListener
         if (ArrayUtils.contains(settings.blacklistDimensions, w.provider.getDimension()))
         {
             return;
+        }
+
+        Iterator<Pair<Integer, ChunkPos>> retrogenListIterator = CommonHandler.getRetrogenList().listIterator();
+        while (retrogenListIterator.hasNext())
+        {
+            Pair<Integer, ChunkPos> next = retrogenListIterator.next();
+            if (next.getLeft() == w.provider.getDimension() && next.getRight().x == x && next.getRight().z == z)
+            {
+                retrogenListIterator.remove();
+                break;
+            }
         }
 
         float chance = settings.triesPerChunk;
