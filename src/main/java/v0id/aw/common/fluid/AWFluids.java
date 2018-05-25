@@ -2,7 +2,7 @@ package v0id.aw.common.fluid;
 
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import v0id.aw.common.block.AWBlocks;
 import v0id.aw.lib.AWConsts;
 import v0id.aw.lib.ILifecycleListener;
@@ -35,7 +35,7 @@ public class AWFluids implements ILifecycleListener
     }
 
     @Override
-    public void preInit(FMLPreInitializationEvent evt)
+    public void init(FMLInitializationEvent evt)
     {
         FluidRegistry.addBucketForFluid(FLUID_IMPURE_AETHERIUM_GAS.setBlock(AWBlocks.BLOCK_FLUID_IMPURE_AETHERIUM));
         FluidRegistry.addBucketForFluid(FLUID_AETHERIUM_GAS.setBlock(AWBlocks.BLOCK_FLUID_AETHERIUM));
