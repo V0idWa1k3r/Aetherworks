@@ -125,6 +125,41 @@
                 "textures" : {
                     "layer0" : "aetherworks:items/aether_crown_mundane"
                 }
+            },
+            "crude_crossbow_frame" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/crude_crossbow_frame"
+                }
+            },
+            "crude_crossbow_limbs" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/crude_crossbow_limbs"
+                }
+            },
+            "crossbow_frame" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/crossbow_frame"
+                }
+            },
+            "crossbow_limbs" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/crossbow_limbs"
+                }
+            },
+            "infused_crossbow_frame" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/crossbow_frame"
+                }
+            },
+            "crossbow_limbs_quartz" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/crossbow_limbs_quartz"
+                }
+            },
+            "crossbow_limbs_magma" : {
+                "textures" : {
+                    "layer0" : "aetherworks:items/crossbow_limbs_magma"
+                }
             }
 		}
 	}

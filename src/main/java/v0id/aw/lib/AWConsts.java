@@ -68,11 +68,20 @@ public class AWConsts
     public static final ResourceLocation itemPotionGem = new ResourceLocation(modid, itemPotionGemID);
     public static final String itemCrownID = "item_crown";
     public static final ResourceLocation itemCrown = new ResourceLocation(modid, itemCrownID);
+    public static final String itemCrossbowQuartzID = "item_crossbow_quartz";
+    public static final ResourceLocation itemCrossbowQuartz = new ResourceLocation(modid, itemCrossbowQuartzID);
+    public static final String itemCrossbowMagmaID = "item_crossbow_magma";
+    public static final ResourceLocation itemCrossbowMagma = new ResourceLocation(modid, itemCrossbowMagmaID);
 
     public static final String recipePotionGemID = "recipe_potion_gem";
     public static final ResourceLocation recipePotionGem = new ResourceLocation(modid, itemPotionGemID);
     public static final String recipeCrownID = "recipe_crown";
     public static final ResourceLocation recipeCrown = new ResourceLocation(modid, recipeCrownID);
+
+    public static final String entityAWArrowID = "entity_arrow";
+    public static final ResourceLocation entityAWArrow = new ResourceLocation(modid, entityAWArrowID);
+    public static final String entityAWMagmaID = "entity_magma";
+    public static final ResourceLocation entityAWMagma = new ResourceLocation(modid, entityAWMagmaID);
 
     public static final ResourceLocation metalFormerUI = new ResourceLocation(modid, "textures/compat/jei/ui_metal_former.png");
     public static final String catIDMetalFormer = "aetherworks.metal_former";

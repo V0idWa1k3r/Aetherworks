@@ -47,6 +47,12 @@ public class AWItems implements ILifecycleListener
     @GameRegistry.ObjectHolder(value = AWConsts.itemCrownID)
     public static final Item CROWN = null;
 
+    @GameRegistry.ObjectHolder(value = AWConsts.itemCrossbowQuartzID)
+    public static final Item CROSSBOW_QUARTZ = null;
+
+    @GameRegistry.ObjectHolder(value = AWConsts.itemCrossbowMagmaID)
+    public static final Item CROSSBOW_MAGMA = null;
+
     @Override
     public void preInit(FMLPreInitializationEvent evt)
     {
@@ -66,7 +72,9 @@ public class AWItems implements ILifecycleListener
                 new AWShovel(AWShovel.Type.REDSTONE),
                 new AWShovel(AWShovel.Type.SLIME),
                 new PotionGem(),
-                new AWCrown()
+                new AWCrown(),
+                new AWCrossbow(AWCrossbow.Type.QUARTZ),
+                new AWCrossbow(AWCrossbow.Type.MAGMA)
         };
 
         event.getRegistry().registerAll(toRegister);

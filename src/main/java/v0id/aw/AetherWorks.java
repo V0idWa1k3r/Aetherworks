@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import v0id.aw.common.block.AWBlocks;
+import v0id.aw.common.entity.AWEntities;
 import v0id.aw.common.fluid.AWFluids;
 import v0id.aw.common.handler.CommonHandler;
 import v0id.aw.common.item.AWItems;
@@ -29,6 +30,7 @@ import java.util.List;
 public class AetherWorks
 {
     private static List<ILifecycleListener> listenerList = Lists.newArrayList();
+    private static AetherWorks instance;
 
     @SidedProxy(clientSide = AWConsts.clientProxy, serverSide = AWConsts.serverProxy)
     public static IAWProxy proxy;
@@ -42,12 +44,14 @@ public class AetherWorks
         listenerList.add(new AWGenerator());
         listenerList.add(new AWRecipes());
         listenerList.add(new AWNetworkSwitchMode());
+        listenerList.add(new AWEntities());
         FluidRegistry.enableUniversalBucket();
     }
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent evt)
     {
+        instance = this;
         MinecraftForge.EVENT_BUS.register(new CommonHandler());
         listenerList.add(proxy);
         listenerList.forEach(l -> l.preInit(evt));
@@ -68,5 +72,10 @@ public class AetherWorks
     public IAWProxy getProxy()
     {
         return proxy;
+    }
+
+    public static AetherWorks getInstance()
+    {
+        return instance;
     }
 }

@@ -1,0 +1,6 @@
+{
+    "parent": "aetherworks:item/item_crossbow_magma",
+    "textures": {
+        "0": "aetherworks:items/crossbow_magma_1"
+    }
+}

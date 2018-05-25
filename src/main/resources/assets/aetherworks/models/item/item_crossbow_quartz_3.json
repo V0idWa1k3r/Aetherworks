@@ -1,0 +1,6 @@
+{
+    "parent": "aetherworks:item/item_crossbow_quartz",
+    "textures": {
+        "0": "aetherworks:items/crossbow_quartz_3"
+    }
+}

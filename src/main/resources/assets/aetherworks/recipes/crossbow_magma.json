@@ -1,0 +1,21 @@
+{
+    "result": {
+        "item": "aetherworks:item_crossbow_magma",
+        "data": 0
+    },
+    "type": "forge:ore_shapeless",
+    "ingredients": [
+        {
+            "item": "aetherworks:item_resource",
+            "data": 27
+        },
+        {
+            "item": "aetherworks:item_resource",
+            "data": 29
+        },
+        {
+            "item": "minecraft:string",
+            "data": 0
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "parent": "aetherworks:item/crossbow",
+    "textures": {
+        "0": "aetherworks:items/crossbow_quartz"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "draw": 0
+            },
+            "model": "aetherworks:item/item_crossbow_quartz_0"
+        },
+        {
+            "predicate": {
+                "draw": 0.1
+            },
+            "model": "aetherworks:item/item_crossbow_quartz_1"
+        },
+        {
+            "predicate": {
+                "draw": 0.5
+            },
+            "model": "aetherworks:item/item_crossbow_quartz_2"
+        },
+        {
+            "predicate": {
+                "draw": 0.9
+            },
+            "model": "aetherworks:item/item_crossbow_quartz_3"
+        }
+    ]
+}

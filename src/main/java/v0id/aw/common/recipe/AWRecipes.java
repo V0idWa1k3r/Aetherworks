@@ -44,6 +44,9 @@ public class AWRecipes implements ILifecycleListener
         RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(48, 64, 0, 0, 48, 64, 0, 0, 30, 34, new ItemStack(AWItems.RESOURCE, 1, 18), new ItemStack(Items.REDSTONE, 1, 0), new ItemStack(Blocks.PISTON, 1, 0), new ItemStack(Blocks.REDSTONE_TORCH, 1, 0), new ItemStack(Items.REPEATER, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 19)));
         RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(0, 0, 48, 64, 0, 0, 32, 64, 30, 34, new ItemStack(AWItems.RESOURCE, 1, 18), new ItemStack(Items.SLIME_BALL, 1, 0), new ItemStack(Blocks.STICKY_PISTON, 1, 0), new ItemStack(Items.COMPARATOR, 1, 0), new ItemStack(Blocks.HOPPER, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 20)));
         RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(16, 16, 16, 16, 16, 16, 16, 16, 16, 16, new ItemStack(AWItems.RESOURCE, 1, 22), new ItemStack(AWItems.RESOURCE, 1, 5), new ItemStack(Items.ENDER_EYE, 1, 0), new ItemStack(Blocks.OBSIDIAN, 1, 0), new ItemStack(Blocks.OBSIDIAN, 1, 0), new ItemStack(AWItems.CROWN, 1, 0)));
+        RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(32, 48, 32, 32, 0, 0, 0, 0, 32, 32, new ItemStack(AWItems.RESOURCE, 1, 25), new ItemStack(RegistryManager.plate_lead, 1, 0), new ItemStack(Blocks.LEVER, 1, 0), new ItemStack(RegistryManager.plate_lead, 1, 0), new ItemStack(Blocks.IRON_BARS, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 27)));
+        RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(0, 0, 32, 48, 0, 0, 32, 32, 32, 32, new ItemStack(AWItems.RESOURCE, 1, 26), new ItemStack(Blocks.QUARTZ_BLOCK, 1, 0), new ItemStack(Blocks.GLASS, 1, 0), new ItemStack(Blocks.QUARTZ_BLOCK, 1, 0), new ItemStack(RegistryManager.eldritch_insignia, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 28)));
+        RecipeRegistry.alchemyRecipes.add(new AlchemyRecipe(0, 0, 32, 32, 32, 48, 0, 0, 32, 32, new ItemStack(AWItems.RESOURCE, 1, 26), new ItemStack(Blocks.MAGMA, 1, 0), new ItemStack(RegistryManager.blasting_core, 1, 0), new ItemStack(Blocks.MAGMA, 1, 0), new ItemStack(RegistryManager.jet_augment, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 29)));
         if (ConfigManager.enableBronze)
         {
             MetalFormerRecipes.addRecipe(new FluidStack(AWFluids.FLUID_AETHERIUM_GAS, 144), new ItemStack(RegistryManager.ingot_bronze, 1, 0), new ItemStack(AWItems.RESOURCE, 1, 4), 2100);
@@ -62,6 +65,8 @@ public class AWRecipes implements ILifecycleListener
         AARecipes.addRecipe(new ItemStack(AWItems.RESOURCE, 1, 13), new ItemStack(AWItems.RESOURCE, 1, 14), 4, 55, 35, 2350, 2800, 20);
         AARecipes.addRecipe(new ItemStack(AWItems.RESOURCE, 1, 17), new ItemStack(AWItems.RESOURCE, 1, 18), 4, 70, 25, 2500, 2900, 25);
         AARecipes.addRecipe(new ItemStack(AWItems.RESOURCE, 1, 21), new ItemStack(AWItems.RESOURCE, 1, 22), 6, 80, 30, 2500, 2800, 30);
+        AARecipes.addRecipe(new ItemStack(AWItems.RESOURCE, 1, 23), new ItemStack(AWItems.RESOURCE, 1, 25), 5, 60, 25, 2400, 2800, 20);
+        AARecipes.addRecipe(new ItemStack(AWItems.RESOURCE, 1, 24), new ItemStack(AWItems.RESOURCE, 1, 26), 5, 60, 30, 2400, 2800, 20);
         Stream.of(Geode.Type.values()).forEach(t -> AARecipes.addRecipe(new AARecipes.GeodeRecipe(new ItemStack(AWItems.GEODE, 1, t.ordinal()), ItemStack.EMPTY, 1, 10, 5, 800, 3000, 10)));
         registerGeodes();
         event.getRegistry().register(new RecipePotionGem());

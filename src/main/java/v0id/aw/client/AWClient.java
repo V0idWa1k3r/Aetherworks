@@ -6,6 +6,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
+import net.minecraft.client.renderer.entity.RenderTippedArrow;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
@@ -19,6 +20,7 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -26,12 +28,15 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 import teamroots.embers.particle.ParticleUtil;
 import v0id.aw.client.handler.ClientHandler;
 import v0id.aw.client.handler.ColorPotionGem;
+import v0id.aw.client.render.entity.RenderAWMagma;
 import v0id.aw.client.render.tile.RenderAnvil;
 import v0id.aw.client.render.tile.RenderForge;
 import v0id.aw.client.render.tile.RenderMetalFormer;
 import v0id.aw.client.render.tile.RenderPrism;
 import v0id.aw.common.block.AWBlocks;
 import v0id.aw.common.block.forge.Component;
+import v0id.aw.common.entity.AWArrow;
+import v0id.aw.common.entity.AWMagma;
 import v0id.aw.common.item.AWItems;
 import v0id.aw.common.item.AWResource;
 import v0id.aw.common.item.Geode;
@@ -108,6 +113,10 @@ public class AWClient implements IAWProxy
         ModelLoader.setCustomModelResourceLocation(AWItems.POTION_GEM, 0, mkModelPtr(AWItems.POTION_GEM, "inventory"));
         ModelLoader.setCustomModelResourceLocation(AWItems.CROWN, 0, mkModelPtr(AWItems.CROWN, "inventory"));
         StreamSupport.stream(PotionType.REGISTRY.spliterator(), false).forEach(pt -> ModelLoader.setCustomModelResourceLocation(AWItems.POTION_GEM, PotionType.REGISTRY.getIDForObject(pt) + 1, mkModelPtr(AWItems.POTION_GEM, "inventory")));
+        ModelLoader.setCustomModelResourceLocation(AWItems.CROSSBOW_QUARTZ, 0, mkModelPtr(AWItems.CROSSBOW_QUARTZ, "inventory"));
+        ModelBakery.registerItemVariants(AWItems.CROSSBOW_QUARTZ, mkModelPtr(AWItems.CROSSBOW_QUARTZ, "inventory"));
+        ModelLoader.setCustomModelResourceLocation(AWItems.CROSSBOW_MAGMA, 0, mkModelPtr(AWItems.CROSSBOW_MAGMA, "inventory"));
+        ModelBakery.registerItemVariants(AWItems.CROSSBOW_MAGMA, mkModelPtr(AWItems.CROSSBOW_MAGMA, "inventory"));
     }
 
     @Override
@@ -119,6 +128,8 @@ public class AWClient implements IAWProxy
         ClientRegistry.bindTileEntitySpecialRenderer(TileForge.class, new RenderForge());
         ClientRegistry.bindTileEntitySpecialRenderer(TileMetalFormer.class, new RenderMetalFormer());
         ClientRegistry.bindTileEntitySpecialRenderer(TileAnvil.class, new RenderAnvil());
+        RenderingRegistry.registerEntityRenderingHandler(AWArrow.class, RenderTippedArrow::new);
+        RenderingRegistry.registerEntityRenderingHandler(AWMagma.class, RenderAWMagma::new);
     }
 
     @Override

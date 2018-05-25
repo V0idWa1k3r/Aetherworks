@@ -45,7 +45,14 @@ public class AWResource extends Item
         SHOVEL_HEAD_REDSTONE(true),
         SHOVEL_HEAD_SLIME(true),
         AETHER_CROWN_CRUDE,
-        AETHER_CROWN_MUNDANE;
+        AETHER_CROWN_MUNDANE,
+        CRUDE_CROSSBOW_FRAME,
+        CRUDE_CROSSBOW_LIMBS,
+        CROSSBOW_FRAME,
+        CROSSBOW_LIMBS,
+        INFUSED_CROSSBOW_FRAME(true),
+        CROSSBOW_LIMBS_QUARTZ(true),
+        CROSSBOW_LIMBS_MAGMA(true);
 
         ResourceType()
         {
